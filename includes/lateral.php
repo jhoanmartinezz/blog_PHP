@@ -25,11 +25,11 @@
                     <div class="alerta alerta-exito">
                         <?=$_SESSION['completado']?>
                     </div>
-                <?php else: ?>
+                <?php elseif(isset($_SESSION['errores']['general'])): ?>
                     <div class="alerta alerta-error">
                         <?=$_SESSION['errores']['general']?>
                     </div>
-                <?php endif; ?>
+                <?php endif; ?> <!-- fin mostra errores desde backend -->
 
                 <form action="registro.php" method="POST">
                     <label for="nombre">Nombre</label>

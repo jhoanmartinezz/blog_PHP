@@ -11,7 +11,17 @@ function mostrarError($errores, $campo) {
 }
 
 function borrarError(){
-    $_SESSION['errores'] = null;
-    $borrado = session_unset();
+    $borrado = false;
+
+    if(isset($_SESSION['errores'])){
+        $_SESSION['errores'] = null;
+        $borrado = session_unset();
+    }
+
+    if(isset($_SESSION['errores']['general'])){
+        $_SESSION['errores'] = null;
+        session_unset();
+    }
+
     return $borrado;
 }
