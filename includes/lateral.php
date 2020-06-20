@@ -1,5 +1,13 @@
 <?php require_once 'includes/helpers.php';?>
 <aside id="sidebar">
+        <!-- mostrar sesion-->
+        <?php if(isset($_SESSION['usuario'])): ?>
+            <div id="usuario-logueado" class="bloque">
+                <h3>Bienvenido</h3>
+                <h3><?= $_SESSION['usuario']["nombre"]." ";?></h3>
+            </div>
+        <?php endif; ?> <!-- fin logueado-->
+
             <div id="login" class="bloque">
                 <h3>Identificate</h3>
                 <form action="login.php" method="post">
@@ -8,10 +16,10 @@
                     <input type="email" name="email"/>
 
                     <label for="password">Contraseña</label>
-                    <input type="password" name="email"/>
+                    <input type="password" name="password"/>
                     
                     </br>
-                    <input type="submit" value="iniciar sesion"/>
+                    <input type="submit" name="submit "value="iniciar sesion"/>
 
                 </form>
             </div>
