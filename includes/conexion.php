@@ -3,9 +3,9 @@
 $server = "localhost";
 $username = "root";
 $password = "";
-$databse = "blog";
+$database = "blog";
 
-$db = mysqli_connect($server, $username, $password, $databse);
+$db = mysqli_connect($server, $username, $password, $database);
 
 mysqli_query($db, "SET NAMES 'utf-8'");
 

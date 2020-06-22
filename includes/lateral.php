@@ -1,15 +1,40 @@
-<?php require_once 'includes/helpers.php';?>
+
 <aside id="sidebar">
+
         <!-- mostrar sesion-->
         <?php if(isset($_SESSION['usuario'])): ?>
             <div id="usuario-logueado" class="bloque">
-                <h3>Bienvenido</h3>
+                <h3>Logged</h3>
                 <h3><?= $_SESSION['usuario']["nombre"]." ";?></h3>
+                    <!-- cerrar sesion botones -->
+                        <a href="cerrar.php" class="boton boton-azul">Crear publicacion</a>
+                        <a href="cerrar.php" class="boton boton-azul">Crear categoria</a>
+                        <a href="cerrar.php" class="boton boton-gris">Editar datos</a>
+                        <a href="cerrar.php" class="boton boton-rojo">Cerrar sesion</a>
             </div>
         <?php endif; ?> <!-- fin logueado-->
 
             <div id="login" class="bloque">
                 <h3>Identificate</h3>
+                
+
+
+                <!-- Corregir el error aca -->
+                <!-- error de login-->
+                <?php if(isset($_SESSION['usuario'])): ?>
+                        <?php unset($_SESSION['error-login']);?>
+
+                    <?php elseif(isset($_SESSION['error_login'])):?>
+                        <div class="alerta alerta-error">
+                            <?= $_SESSION["error_login"];?>
+                        </div>
+                <?php endif; ?>
+                     
+                    <!-- fin error de login -->
+
+
+
+
                 <form action="login.php" method="post">
                     
                     <label for="email">Email</label>

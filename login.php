@@ -5,6 +5,13 @@ require_once('includes/conexion.php');
 
 //recoger los datos del formulario 
 if(isset($_POST)){
+
+    //borrar error antiguo
+    if(isset($_SESSION['error_login'])){
+        session_unset($_SESSION['error_login']);
+    }
+
+    //recojo datos del formulacio
     $email = trim($_POST['email']);
     $password = $_POST['password'];
 
@@ -22,9 +29,7 @@ if(isset($_POST)){
             //crear sesion pasa usuario logueado
             $_SESSION['usuario'] = $usuario;
             //borrar sesion de error de login
-            if(isset($_SESSION['error_login'])){
-                session_unset($_SESSION['error_login']);
-            }
+
         }else{
             $_SESSION['error_login'] = "login incorrecto";
         }

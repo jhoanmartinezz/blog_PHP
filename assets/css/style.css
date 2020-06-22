@@ -166,7 +166,8 @@ input[type="email"]{
 
 
 input[type="button"],
-input[type="submit"]{
+input[type="submit"],
+.boton{
     margin-top:5px;
     margin-bottom: 5px;
     display: block;
@@ -176,6 +177,7 @@ input[type="submit"]{
     border:1px solid #156785;
     cursor:pointer;
     padding: 7px;
+    text-align: center;
 }
 
 input[type="text"],
@@ -212,4 +214,23 @@ input[type="email"]{
 
 .alerta-error{
     background: red;
+}
+
+.alerta-exito{
+    background:green;
+}
+
+.boton-azul{
+    background:#262690;
+    border: #262690;
+}
+
+.boton-gris{
+    background:#e0950d;
+    border: #e0950d;
+}
+
+.boton-rojo{
+    background: #ab1616;
+    border: #ab1616;
 }
