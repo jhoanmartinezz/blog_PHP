@@ -27,13 +27,17 @@
                 <!-- trayendo categorias -->
                 <!-- ///////////////////////////////// -->
                 <?php $categorias = conseguirCategorias($db);
-                    while($i = mysqli_fetch_assoc($categorias)): ?>
+                    if(!empty($categorias)):
+                    while($i = mysqli_fetch_assoc($categorias)): 
+                ?>
                         <li>
                             <a href="categoria.php?id=<?= $i['id'] ?>">
                                 <?=$i["nombre"]?>
                             </a>
                         </li>
-                <?php endwhile; ?> 
+                <?php 
+                endwhile; 
+                endif;?> 
                 <!-- ///////////////////////////////// -->
                 <!-- fin traer categorias -->
 

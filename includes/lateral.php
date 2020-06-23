@@ -7,18 +7,17 @@
                 <h3>Logged</h3>
                 <h3><?= $_SESSION['usuario']["nombre"]." ";?></h3>
                     <!-- cerrar sesion botones -->
-                        <a href="cerrar.php" class="boton boton-azul">Crear publicacion</a>
-                        <a href="cerrar.php" class="boton boton-azul">Crear categoria</a>
+                        <a href="crear-publicacion.php" class="boton boton-azul">Crear publicacion</a>
+                        <a href="crear-categoria.php" class="boton boton-azul">Crear categoria</a>
                         <a href="cerrar.php" class="boton boton-gris">Editar datos</a>
                         <a href="cerrar.php" class="boton boton-rojo">Cerrar sesion</a>
             </div>
         <?php endif; ?> <!-- fin logueado-->
 
+        <!-- borrar los bloques despues de iniciar sesion -->
+        <?php if(!isset($_SESSION['usuario'])): ?>
             <div id="login" class="bloque">
                 <h3>Identificate</h3>
-                
-
-
                 <!-- Corregir el error aca -->
                 <!-- error de login-->
                 <?php if(isset($_SESSION['usuario'])): ?>
@@ -31,10 +30,6 @@
                 <?php endif; ?>
                      
                     <!-- fin error de login -->
-
-
-
-
                 <form action="login.php" method="post">
                     
                     <label for="email">Email</label>
@@ -87,4 +82,6 @@
                 </form>
                 <?php borrarError(); ?>
             </div>
+            <?php endif; ?>
+             <!-- fin if de los bloques logueados -->   
         </aside>
